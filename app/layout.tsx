@@ -27,8 +27,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
   openGraph: {
-    title: "Omen Menu Online",
-    description: "Open Source Event Monitoring",
+    title: "Menu Online Rombong Omen",
+    description:
+      "Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan",
     url: "https://menu-omen.vercel.app/",
     siteName: "omenmenu.app",
     images: [
@@ -54,7 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Menu online Rombong Omen",
-    card: "summary_large_image",
+    description:
+      "Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan",
   },
 };
 
@@ -68,38 +70,6 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${changa.variable} font-sans`}
     >
-      <head>
-        <title>Rombong Omen</title>
-        <meta
-          name="Menu Online Rombong Omen"
-          content="Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan"
-        />
-
-        <meta property="og:url" content="https://menu-omen.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Menu Online Rombong Omen" />
-        <meta
-          property="og:description"
-          content="Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan"
-        />
-        <meta
-          property="og:image"
-          content="https://menu-omen.vercel.app/og.png"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="menu-omen.vercel.app" />
-        <meta property="twitter:url" content="https://menu-omen.vercel.app/" />
-        <meta name="twitter:title" content="Menu Online Rombong Omen" />
-        <meta
-          name="twitter:description"
-          content="Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan"
-        />
-        <meta
-          name="twitter:image"
-          content="https://menu-omen.vercel.app/og.png"
-        />
-      </head>
       <body className="w-full min-h-screen px-16 bg-pastel sm:px-4 md:px-8">
         {children}
       </body>
