@@ -18,8 +18,44 @@ const changa = Changa_One({
 });
 
 export const metadata: Metadata = {
-  title: "Rombong Omen",
+  title: {
+    template: "%s | Omen Menu Online",
+    default: "Omen Menu Online",
+  },
   description: "Menu online Rombong Omen",
+  icons: {
+    shortcut: "/favicon.png",
+  },
+  openGraph: {
+    title: "Omen Menu Online",
+    description: "Open Source Event Monitoring",
+    url: "http://localhost:3000/",
+    siteName: "omenmenu.app",
+    images: [
+      {
+        url: "http://localhost:3000/og.png",
+        width: 2294,
+        height: 1090,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Highstorm",
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +68,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${changa.variable} font-sans`}
     >
+      <head></head>
       <body className="w-full min-h-screen px-16 bg-pastel sm:px-4 md:px-8">
         {children}
       </body>
