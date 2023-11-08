@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Omen Menu Online",
     description: "Open Source Event Monitoring",
-    url: "menu-omen.vercel.app/",
+    url: "https://menu-omen.vercel.app/",
     siteName: "omenmenu.app",
     images: [
       {
-        url: "menu-omen.vercel.app/og.png",
+        url: "https://menu-omen.vercel.app/og.png",
         width: 2294,
         height: 1090,
       },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Highstorm",
+    title: "Menu online Rombong Omen",
     card: "summary_large_image",
   },
 };
