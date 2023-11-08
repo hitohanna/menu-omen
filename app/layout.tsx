@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Omen Menu Online",
     description: "Open Source Event Monitoring",
-    url: "http://localhost:3000/",
+    url: "menu-omen.vercel.app/",
     siteName: "omenmenu.app",
     images: [
       {
-        url: "http://localhost:3000/og.png",
+        url: "menu-omen.vercel.app/og.png",
         width: 2294,
         height: 1090,
       },
