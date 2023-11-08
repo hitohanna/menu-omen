@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
-import { IoLogoTiktok } from "react-icons/io5";
 
 function Footer() {
   return (
