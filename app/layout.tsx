@@ -57,6 +57,13 @@ export const metadata: Metadata = {
     title: "Menu online Rombong Omen",
     description:
       "Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan",
+    images: [
+      {
+        url: "https://menu-omen.vercel.app/og.png",
+        width: 2294,
+        height: 1090,
+      },
+    ],
   },
 };
 
