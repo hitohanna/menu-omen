@@ -5,13 +5,7 @@ import ListMenu from "./element/listMenu";
 import { Particles } from "./utils/particles";
 import { motion } from "framer-motion";
 
-const Menucard = async ({
-  Kategories,
-  Menus,
-}: {
-  Kategories: TKategories;
-  Menus: TMenus[];
-}) => {
+const Menucard = async ({ Kategories }: { Kategories: TKategories }) => {
   const variants = {
     hidden: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0 },
@@ -42,11 +36,9 @@ const Menucard = async ({
             className="absolute object-cover w-full border-2 border-black z-1 aspect-video rounded-xl bg-kuning"
           />
         </div>
-        {Menus?.filter((menu) => menu.kategori.title === Kategories.title).map(
-          (menu, i) => (
-            <ListMenu Menu={menu} key={i} />
-          )
-        )}
+        {Kategories.menu.map((menu, i) => (
+          <ListMenu Menu={menu} key={i} />
+        ))}
       </div>
     </motion.div>
   );

@@ -1,9 +1,24 @@
+// type TKategories =
+//     {
+//         _id: string,
+//         title: string,
+//         seri: string,
+//         gambar: string
+//     }
 type TKategories =
     {
         _id: string,
         title: string,
-        seri: string,
-        gambar: string
+        gambar: string,
+        menu: [
+            {
+                _id: string,
+                nama: string,
+                harga: string,
+                deskripsi: string,
+                tersedia: boolean
+            }
+        ]
     }
 
 // type TMenus = {
@@ -19,6 +34,4 @@ type TMenus = {
     harga: string,
     deskripsi: string,
     tersedia: boolean,
-    kategori:
-    { title: string },
 }

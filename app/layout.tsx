@@ -18,13 +18,17 @@ const changa = Changa_One({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://menu-omen.vercel.app/"),
   title: {
-    template: "%s | Omen Menu Online",
-    default: "Omen Menu Online",
+    template: "%s | Omen Menu",
+    default: "Omen Menu",
   },
-  description: "Menu online Rombong Omen",
+  description:
+    "Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan",
   icons: {
-    shortcut: "/favicon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Menu Online Rombong Omen",
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "omenmenu.app",
     images: [
       {
-        url: "https://menu-omen.vercel.app/og.png",
+        url: "/og.png",
         width: 2294,
         height: 1090,
       },
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
       "Menu online untuk kamu biar gak bingung lagi kalo pesen di Rombong Omen, yuk di pesan",
     images: [
       {
-        url: "https://menu-omen.vercel.app/og.png",
+        url: "/og.png",
         width: 2294,
         height: 1090,
       },

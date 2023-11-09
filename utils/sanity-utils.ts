@@ -22,6 +22,24 @@ export async function getKategoris() {
 
     }
 }
+
+export async function getKatMenus() {
+    const query = await client.fetch(groq`*[_type == "kategori"] | order(lower(seri) asc){  
+      _id,
+      title,
+      "gambar":gambar.asset->url,
+      "menu":*[_type == "menu" && kategori._ref == ^._id] | order(harga asc)
+        {
+          _id,
+          nama,
+          harga,
+          deskripsi,
+          tersedia,
+        }
+      }`);
+    return query;
+}
+
 export async function getMenus() {
     const query = await client.fetch(groq`*[_type == "menu"] | order(lower(nama) asc){
         _id,
