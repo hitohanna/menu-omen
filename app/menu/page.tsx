@@ -1,14 +1,8 @@
-// import { getKategori, getMenus } from "@/lib/sanity-utils";
-import Link from "next/link";
-import { getKatMenus, getKategoris, getMenus } from "@/utils/sanity-utils";
-import { ChevronLeft } from "lucide-react";
+import { getKatMenus } from "@/utils/sanity-utils";
+
 import Menucard from "@/components/menucard";
-import LoadingMenu from "@/components/element/loadingmenu";
-import ButtMenu from "@/components/element/buttMenu";
 
 const page = async () => {
-  // const Kategori: TKategories[] = await getKategoris();
-  // const Menus: TMenus[] = await getMenus();
   const Kategori: TKategories[] = await getKatMenus();
 
   return (
