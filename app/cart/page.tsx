@@ -6,7 +6,7 @@ import { EncodedUrl } from "@/utils/encodedUrl";
 import { MoveLeft } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 
-const page = () => {
+const Page = () => {
   const { products } = useCartStore();
   return (
     <div className="flex flex-col pt-[4.7rem] w-full max-w-3xl mx-auto font-poppins mb-8">
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
