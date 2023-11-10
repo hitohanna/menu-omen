@@ -28,10 +28,30 @@ type TKategories =
 //     deskripsi: string,
 //     tersedia: boolean,
 // }
+
 type TMenus = {
     _id: string,
     nama: string,
     harga: string,
-    deskripsi: string,
+    deskripsi?: string,
     tersedia: boolean,
+}
+
+type TMenusCart = {
+    _id: string,
+    nama: string,
+    harga: string,
+    jumlah: number,
+}
+
+type TCart = {
+    products: TMenusCart[];
+    keranjang: number;
+    total: number
+};
+
+type TActions = {
+    addToCart: (item: TMenusCart) => void;
+    removeFromCart: (item: TMenusCart) => void;
+    removeFromCartSatuan: (item: TMenusCart) => void;
 }

@@ -1,3 +1,5 @@
+import ButtKeranjang from "./buttKeranjang";
+
 const ListMenu = ({ Menu }: { Menu: TMenus }) => {
   return (
     <div className="flex flex-col w-full mt-6">
@@ -12,8 +14,10 @@ const ListMenu = ({ Menu }: { Menu: TMenus }) => {
         <span className="w-full mx-2 border border-black" />
         <p className="">{parseInt(Menu.harga) / 1000}</p>
       </div>
-      <p className="text-sm text-black/70 mt-2">{Menu.deskripsi}</p>
-      <div className="flex items-center justify-between mt-2 "></div>
+      <p className="mt-2 text-sm text-black/70">{Menu.deskripsi}</p>
+      <div className="flex justify-start mt-3 ">
+        <ButtKeranjang menu={Menu} />
+      </div>
     </div>
   );
 };

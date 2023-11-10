@@ -12,3 +12,7 @@
     @apply border-merah border-2 rounded-xl bg-white text-merah hover:text-merah hover:bg-kuning
   }
   
+  .myborder-kuning{
+    @apply  rounded-xl bg-yellow-200 text-black
+  }
+  

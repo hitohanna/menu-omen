@@ -2,6 +2,11 @@ import Link from "next/link";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 
 function Footer() {
+  const codeUri = () => {
+    const text = encodeURI("halo... *Rombong Omen* saya mau pesan");
+    return text;
+  };
+
   return (
     <div>
       <div className="flex flex-wrap justify-between w-full mb-8 mt-28 sm:gap-8 lg:gap-16 font-poppins">
@@ -37,7 +42,7 @@ function Footer() {
           <div className="flex gap-4 h-fit">
             <Link
               target="_blank"
-              href="https://wa.me/6285852281819?text=Halo%20saya%20ingin%20order%20menu%20ROMBONG%20OMEN"
+              href={`https://wa.me/6285852281819?text=${codeUri()}`}
               className="p-3 text-3xl transition-colors sm:text-xl sm:p-2 myborder-merah hover:bg-kuning"
             >
               <AiOutlineWhatsApp />

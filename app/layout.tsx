@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins, Changa_One } from "next/font/google";
@@ -82,6 +83,8 @@ export default function RootLayout({
       className={`${poppins.variable} ${changa.variable} font-sans`}
     >
       <body className="w-full min-h-screen px-16 bg-pastel sm:px-4 md:px-8">
+        <Navbar />
+
         {children}
       </body>
     </html>

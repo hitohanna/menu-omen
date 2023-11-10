@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "sanity": "^3.19.1",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@types/node": "^20",
