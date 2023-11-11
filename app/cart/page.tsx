@@ -9,9 +9,9 @@ const page = () => {
       <div className="flex items-center justify-between mt-4 group text-black/80">
         <div className="flex items-center">
           <span className="mr-2">
-            <MoveLeft className="transition-transform group-hover:-translate-x-2" />
+            <MoveLeft className="transition-transform group-hover:-translate-x-1" />
           </span>
-          <Link href="/menu" className="font-bold font-poppins">
+          <Link replace href="/menu" className="font-bold font-poppins">
             MENU
           </Link>
         </div>

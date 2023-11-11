@@ -1,5 +1,6 @@
 "use client";
 import { useCartStore } from "@/store/zustand";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 const CartList = () => {
   const { removeFromCart, removeFromCartSatuan, addToCart, products, total } =
@@ -26,14 +27,10 @@ const CartList = () => {
     removeFromCart(prods);
   };
 
-  const EncodedUrl = () => {
-    const wa = `Hallo *Rombong Omen*, saya mau pesan :\n{array.forEach(element => {
-            asdasd
-        });} x 2\nTerima Kasih ...
-    `;
-
-    const text = encodeURI(wa);
-    return text;
+  const variantsBoxContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -41,62 +38,72 @@ const CartList = () => {
       {!products || products.length === 0 ? (
         <div className="flex flex-col">
           <span className="w-full my-2 border border-dashed border-zinc-500" />
-          <h3 className="flex my-2 text-base italic font-normal text-zinc-400 font-poppins">
+          <h3 className="flex my-2 text-base italic font-normal text-zinc-400 font-poppins sm:text-sm">
             Keranjang kamu masih kosong ...
           </h3>
         </div>
       ) : (
-        products.map((prod, i) => (
-          <div className="flex flex-col" key={i}>
-            <span className="w-full my-2 border border-dashed border-zinc-500" />
-            <div className="flex items-center justify-between">
-              <div className="flex flex-col items-baseline justify-between w-2/3 text-lg font-bold lg:text-sm sm:text-base">
-                <h3 className="flex text-xl font-semibold text-black uppercase font-poppins">
-                  {prod.nama}
-                </h3>
+        <AnimatePresence>
+          {products.map((prod, i) => (
+            <motion.div
+              variants={variantsBoxContainer}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ type: "ease" }}
+              className="flex flex-col"
+              key={prod._id}
+            >
+              <span className="w-full my-2 border border-dashed border-zinc-500" />
+              <div className="flex items-center justify-between">
+                <div className="flex flex-col items-baseline justify-between w-2/3 text-lg font-bold lg:text-sm sm:text-base">
+                  <h3 className="flex text-xl font-semibold text-black uppercase font-poppins sm:text-sm">
+                    {prod.nama}
+                  </h3>
 
-                <div className="flex items-center">
-                  <p className="justify-end font-light text-end">
-                    Rp.{" "}
-                    {new Intl.NumberFormat("id-ID").format(
-                      parseInt(prod.harga)
-                    )}{" "}
-                    x{" "}
-                  </p>
-                  <span
-                    onClick={() => handleRemoveSatuan(prod)}
-                    className="ml-2 cursor-pointer border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-white   hover:text-white hover:bg-merah transition-colors duration-300"
-                  >
-                    -
-                  </span>
-                  <span className="mx-2 font-bold">{prod.jumlah}</span>
-                  <span
-                    onClick={() => {
-                      handleAdd(prod);
-                      console.log(products);
-                    }}
-                    className="cursor-pointer border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-kuning   hover:text-white hover:bg-merah transition-colors duration-300"
-                  >
-                    +
-                  </span>
+                  <div className="flex items-center">
+                    <p className="justify-end font-light text-end">
+                      Rp.{" "}
+                      {new Intl.NumberFormat("id-ID").format(
+                        parseInt(prod.harga)
+                      )}{" "}
+                      x{" "}
+                    </p>
+                    <span
+                      onClick={() => handleRemoveSatuan(prod)}
+                      className="ml-2 cursor-pointer border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-white   hover:text-white hover:bg-merah transition-colors duration-300"
+                    >
+                      -
+                    </span>
+                    <span className="mx-2 font-bold">{prod.jumlah}</span>
+                    <span
+                      onClick={() => {
+                        handleAdd(prod);
+                        console.log(products);
+                      }}
+                      className="cursor-pointer border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-kuning   hover:text-white hover:bg-merah transition-colors duration-300"
+                    >
+                      +
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <span className="justify-end mr-8 text-lg font-normal text-end sm:text-sm">
-                Rp.{" "}
-                {new Intl.NumberFormat("id-ID").format(
-                  parseInt(prod.harga) * prod.jumlah
-                )}
-              </span>
-              <button
-                onClick={() => handleRemoveCart(prod)}
-                className=" border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-white rounded-full  hover:text-white hover:bg-merah transition-colors duration-300"
-              >
-                X
-              </button>
-            </div>
-          </div>
-        ))
+                <span className="justify-end mr-8 text-lg font-normal text-end sm:text-sm">
+                  Rp.{" "}
+                  {new Intl.NumberFormat("id-ID").format(
+                    parseInt(prod.harga) * prod.jumlah
+                  )}
+                </span>
+                <button
+                  onClick={() => handleRemoveCart(prod)}
+                  className=" border-black border inline-flex items-center justify-center w-5 h-5 text-[7pt] font-bold  text-merah bg-white rounded-full  hover:text-white hover:bg-merah transition-colors duration-300"
+                >
+                  X
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       )}
 
       <span className="w-full my-2 border border-dashed border-zinc-500" />
@@ -111,3 +118,13 @@ const CartList = () => {
 };
 
 export default CartList;
+
+{
+  /* <AnimatePresence>
+            <motion.span
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ type: "ease" }}
+              key={i}
+            ></motion.span> */
+}

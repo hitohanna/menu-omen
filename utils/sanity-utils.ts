@@ -16,28 +16,34 @@ export async function getKategoris() {
 
 
     } catch (error) {
-
         console.error('getKategoris:', error);
-
-
     }
 }
 
 export async function getKatMenus() {
-    const query = await client.fetch(groq`*[_type == "kategori"] | order(lower(seri) asc){  
-      _id,
-      title,
-      "gambar":gambar.asset->url,
-      "menu":*[_type == "menu" && kategori._ref == ^._id] | order(harga asc)
-        {
-          _id,
-          nama,
-          harga,
-          deskripsi,
-          tersedia,
-        }
-      }`);
-    return query;
+
+    try {
+
+        const query = await client.fetch(groq`*[_type == "kategori"] | order(lower(seri) asc){  
+            _id,
+            title,
+            "gambar":gambar.asset->url,
+            "menu":*[_type == "menu" && kategori._ref == ^._id] | order(harga asc)
+              {
+                _id,
+                nama,
+                harga,
+                deskripsi,
+                tersedia,
+              }
+            }`);
+        return query;
+
+
+
+    } catch (error) {
+        console.error('getKategoris:', error);
+    }
 }
 
 export async function getMenus() {

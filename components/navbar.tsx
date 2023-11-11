@@ -92,7 +92,7 @@ const Navbar = () => {
               animate="besar"
               transition={{ type: "spring", damping: 5, duration: 1 }}
               key={keranjang}
-              className="absolute border-white border inline-flex items-center justify-center w-4 h-4 text-[6pt] font-medium  text-white bg-merah  rounded-full -top-1 -right-1 dark:border-gray-900"
+              className="absolute border-white border inline-flex items-center justify-center w-4 h-4 text-[6pt] font-medium  text-white bg-merah  rounded-full -top-1 -right-1"
             >
               {keranjang.toString()}
             </motion.span>
